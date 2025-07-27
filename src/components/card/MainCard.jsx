@@ -29,16 +29,19 @@ const MainCard = ({ title, onclick, children }) => {
           <activeCard.component />
         </div>
       ) : (
-        cardList.map((card) => (
-          <Card
-            key={card.key}
-            title={card.title}
-            onClick={() => handleClick(card.key)}
-            style={{ width: 300, margin: "10px" }}
-          >
-            <p>Click to open {card.title}</p>
-          </Card>
-        ))
+        <div className="flex gap-4 ">
+          {cardList.map((card) => (
+            <div key={card.key} className="min-w-[250px] max-w-[250px]">
+              <Card
+                title={card.title}
+                onClick={() => handleClick(card.key)}
+                hoverable
+              >
+                <p>Click to open {card.title}</p>
+              </Card>
+            </div>
+          ))}
+        </div>
       )}
     </div>
   );
