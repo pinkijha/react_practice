@@ -23,10 +23,12 @@ const MainCard = ({ title, onclick, children }) => {
   return (
     <div>
       {activeCard ? (
-        <div>
+        <div className="m-4">
           <button onClick={() => navigate("?")}>Back</button>
-          <h2>{activeCard.title}</h2>
-          <activeCard.component />
+          <div className="flex flex-col items-center justify-center">
+            <h2 className="font-bold text-xl mb-4">{activeCard.title}</h2>
+            <activeCard.component />
+          </div>
         </div>
       ) : (
         <div className="flex gap-4 ">
