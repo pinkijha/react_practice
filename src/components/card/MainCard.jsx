@@ -4,6 +4,7 @@ import ChipsInput from "../../pages/ChipsInput";
 import Sum from "../../pages/Sum";
 import queryString from "query-string"; // to parse query params
 import { useLocation, useNavigate } from "react-router-dom";
+import ContactForm from "../../pages/ContactForm";
 
 const MainCard = ({ title, onclick, children }) => {
   const location = useLocation();
@@ -12,6 +13,7 @@ const MainCard = ({ title, onclick, children }) => {
   const cardList = [
     { key: "card1", title: "Chips Input", component: ChipsInput },
     { key: "card2", title: "Sum", component: Sum },
+    { key: "card3", title: "Conatct Form ", component: ContactForm },
   ];
 
   const handleClick = (componentKey) => {
