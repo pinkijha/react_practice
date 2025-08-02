@@ -15,6 +15,9 @@ const ContactForm = () => {
       [name]: value,
     }));
   };
+  const thankYouMessage = () => {
+    message.success(`Thank you, ${formData.name}, for your message!`);
+  };
   const handleOnSubmit = (e) =>{    
           e.preventDefault();
           const { name, email, userMessage } = formData;
@@ -57,7 +60,7 @@ const ContactForm = () => {
           placeholder="Message"
           className="border border-gray-500 p-1"
         ></textarea>
-        <button type="submit" className="bg-blue-600 text-white cursor-pointer">
+        <button  type="submit" className="bg-blue-600 text-white cursor-pointer">
           Submit
         </button>
       </form>
@@ -66,3 +69,4 @@ const ContactForm = () => {
 };
 
 export default ContactForm;
+
