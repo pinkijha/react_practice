@@ -7,6 +7,7 @@ const ContactForm = () => {
     email: "",
     userMessage: "",
   });
+  const [formError, setFormError] = React.useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -16,20 +17,29 @@ const ContactForm = () => {
     }));
   };
   const thankYouMessage = () => {
-    message.success(`Thank you, ${formData.name}, for your message!`);
+    alert(`Thank you, ${formData.name}, for your message!`);
   };
   const handleOnSubmit = (e) =>{    
           e.preventDefault();
           const { name, email, userMessage } = formData;
           if (!name || !email || !userMessage) {
-            message.error("Please fill all the fields");
+            setFormData("Please fill all the fields");
             return;
           }
           console.log( formData );
+          thankYouMessage();
+          setFormData({
+            name: "",
+            email: "",
+            userMessage: "",
+          });
   }
 
   return (
     <div className="">
+       {formError && (
+    <p className="text-red-600 font-medium mb-2">{formError}</p>
+  )}
       <form
         onSubmit={handleOnSubmit}
         className="flex flex-col gap-2 shadow-2xl shadow-gray-500/50 p-4"
@@ -63,7 +73,10 @@ const ContactForm = () => {
         <button  type="submit" className="bg-blue-600 text-white cursor-pointer">
           Submit
         </button>
+        
       </form>
+       
+
     </div>
   );
 };
