@@ -28,7 +28,7 @@ const MainCard = ({ title, onclick, children }) => {
     <div>
       {activeCard ? (
         <div className="m-4">
-          <button onClick={() => navigate("?")}>Back</button>
+          <button onClick={() => navigate("?")} className="bg-blue-500 text-white px-2 py-1 rounded-xl">Back</button>
           <div className="flex flex-col items-center justify-center">
             <h2 className="font-bold text-xl mb-4">{activeCard.title}</h2>
             <activeCard.component />
