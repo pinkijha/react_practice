@@ -15,7 +15,7 @@ const MainCard = ({ title, onclick, children }) => {
     { key: "card1", title: "Chips Input", component: ChipsInput },
     { key: "card2", title: "Sum", component: Sum },
     { key: "card3", title: "Conatct Form ", component: ContactForm },
-    { key: "card4", title: "Color Change ", component: ColorChange },
+    { key: "card4", title: "Color Changer ", component: ColorChange },
   ];
 
   const handleClick = (componentKey) => {
