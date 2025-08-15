@@ -6,6 +6,7 @@ import queryString from "query-string"; // to parse query params
 import { useLocation, useNavigate } from "react-router-dom";
 import ContactForm from "../../pages/ContactForm";
 import ColorChange from "../../pages/ColorChange";
+import CommentWidget from "../../pages/CommentWidget";
 
 const MainCard = ({ title, onclick, children }) => {
   const location = useLocation();
@@ -16,6 +17,7 @@ const MainCard = ({ title, onclick, children }) => {
     { key: "card2", title: "Sum", component: Sum },
     { key: "card3", title: "Conatct Form ", component: ContactForm },
     { key: "card4", title: "Color Changer ", component: ColorChange },
+    { key: "card5", title: "Comment Widget ", component: CommentWidget },
   ];
 
   const handleClick = (componentKey) => {
