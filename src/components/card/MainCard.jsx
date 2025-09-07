@@ -7,6 +7,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import ContactForm from "../../pages/ContactForm";
 import ColorChange from "../../pages/ColorChange";
 import CommentWidget from "../../pages/CommentWidget";
+import ProgressBar from "../../pages/ProgressBar";
 
 const MainCard = ({ title, onclick, children }) => {
   const location = useLocation();
@@ -18,6 +19,7 @@ const MainCard = ({ title, onclick, children }) => {
     { key: "card3", title: "Conatct Form ", component: ContactForm },
     { key: "card4", title: "Color Changer ", component: ColorChange },
     { key: "card5", title: "Comment Widget ", component: CommentWidget },
+    { key: "card6", title: "Progress Bar ", component: ProgressBar },
   ];
 
   const handleClick = (componentKey) => {
@@ -27,7 +29,7 @@ const MainCard = ({ title, onclick, children }) => {
   const activeCard = cardList.find((c) => c.key === card);
 
   return (
-    <div>
+    <div className="">
       {activeCard ? (
         <div className="m-4">
           <button onClick={() => navigate("?")} className="bg-blue-500 text-white px-2 py-1 rounded-xl">Back</button>
@@ -37,7 +39,7 @@ const MainCard = ({ title, onclick, children }) => {
           </div>
         </div>
       ) : (
-        <div className="flex gap-4 ">
+        <div className="flex flex-wrap gap-8 m-4">
           {cardList.map((card) => (
             <div key={card.key} className="min-w-[250px] max-w-[250px]">
               <Card
